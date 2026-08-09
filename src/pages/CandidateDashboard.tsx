@@ -1,7 +1,6 @@
 import {
   Bell,
   Bookmark,
-  BriefcaseBusiness,
   CalendarDays,
   CheckCircle2,
   FileText,
