@@ -25,7 +25,7 @@ export default function CandidateDashboard() {
           </p>
 
           <h1 className="mt-1 text-3xl font-black">
-            Welcome back, Tobi 👋
+            Welcome back, 👋
           </h1>
 
           <p className="mt-2 text-slate-500">

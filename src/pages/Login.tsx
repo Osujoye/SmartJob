@@ -11,14 +11,36 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    // Temporary frontend login
-    // Backend authentication will replace this later.
-    if (email && password) {
-      navigate("/candidate/dashboard");
-    }
-  };
+  const users = JSON.parse(
+    localStorage.getItem("users") || "[]"
+  );
+
+  const loggedInUser = users.find(
+    (user: { email: string; password: string }) =>
+      user.email === email.toLowerCase().trim() &&
+      user.password === password
+  );
+
+  if (!loggedInUser) {
+    alert("Invalid email or password.");
+    return;
+  }
+
+  // Save currently logged-in user
+  localStorage.setItem(
+    "user",
+    JSON.stringify(loggedInUser)
+  );
+
+  // Send user to the correct dashboard
+  if (loggedInUser.role === "candidate") {
+    window.location.href = "/candidate/dashboard";
+  } else {
+    window.location.href = "/recruiter/dashboard";
+  }
+};
 
   return (
     <main className="flex min-h-[calc(100vh-73px)] items-center justify-center bg-slate-50 px-6 py-12">
