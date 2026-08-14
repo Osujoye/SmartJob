@@ -26,7 +26,7 @@ export default function Home() {
           <div>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-300">
               <Sparkles size={16} />
-              AI-powered career matching
+              100% career matching software
             </div>
 
             <h1 className="max-w-3xl text-5xl font-black tracking-tight text-white md:text-6xl">
